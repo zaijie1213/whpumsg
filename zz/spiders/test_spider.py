@@ -8,6 +8,6 @@ class TestSpider(BaseSpider):
     start_urls=[
         "http://www.whpu.edu.cn"
     ]
-    def parse(self,response):
-	
-        print response
+    def parse(self, response):
+        filename = response.url.split("/")[-2]
+        open(filename, 'wb').write(response.body)
