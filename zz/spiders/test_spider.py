@@ -9,5 +9,5 @@ class TestSpider(BaseSpider):
         "http://www.whpu.edu.cn"
     ]
     def parse(self, response):
-        filename = response.url.split("/")[-2]
+        filename = "a.txt"
         open(filename, 'wb').write(response.body)
